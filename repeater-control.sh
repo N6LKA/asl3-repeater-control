@@ -7,7 +7,7 @@
 #
 # Announcements are made via asl-tts (included with ASL3).
 #
-# Usage: repeater-control Enable|Disable [NodeNumber]
+# Usage: repeater enable|disable [NodeNumber]
 #
 # If NodeNumber is omitted, NODE1 env variable is used, or the first node
 # found in rpt.conf is auto-detected.
@@ -19,15 +19,14 @@ RPT_CONF="/etc/asterisk/rpt.conf"
 
 # --- Argument Parsing ---
 
-clear
-
 if [ -z "$1" ]; then
     echo "Error: Enable or Disable command required."
-    echo "Usage: $(basename "$0") Enable|Disable [NodeNumber]"
+    echo "Usage: $(basename "$0") enable|disable [NodeNumber]"
     exit 1
 fi
 
-cmd1="$1"
+# Normalize to lowercase for case-insensitive matching
+cmd1="${1,,}"
 echo "Command: $cmd1"
 
 if [ -z "$2" ]; then
@@ -68,7 +67,7 @@ play_announcement() {
 
 # --- Enable ---
 
-if [ "$cmd1" = "Enable" ]; then
+if [ "$cmd1" = "enable" ]; then
 
     # Enable TX
     $ASTERISK -rx "rpt cmd $node cop 2"
@@ -98,7 +97,7 @@ fi
 
 # --- Disable ---
 
-if [ "$cmd1" = "Disable" ]; then
+if [ "$cmd1" = "disable" ]; then
 
     # Disable Local Telemetry Output
     $ASTERISK -rx "rpt cmd $node cop 34"
