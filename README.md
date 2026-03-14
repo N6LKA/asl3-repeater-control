@@ -26,7 +26,7 @@ Run the following command as root or with sudo for both fresh installs and updat
 bash <(curl -fsSL https://raw.githubusercontent.com/N6LKA/asl3-repeater-control/main/install.sh)
 ```
 
-**Fresh install:** Downloads `repeater-control.sh` directly from GitHub, installs it to `/etc/asterisk/scripts/asl3-repeater-control/`, sets ownership to `root:asterisk`, and creates a symlink at `/usr/local/bin/repeater` for system-wide access.
+**Fresh install:** Downloads `repeater-control.sh` directly from GitHub, installs it to `/etc/asterisk/scripts/`, sets ownership to `root:asterisk`, and creates a symlink at `/usr/local/bin/repeater` for system-wide access.
 
 **Existing install detected:** The installer will prompt for confirmation, back up the existing script, and download the latest version.
 

@@ -4,7 +4,7 @@
 # https://github.com/N6LKA/asl3-repeater-control
 # =============================================================================
 
-INSTALL_DIR="/etc/asterisk/scripts/asl3-repeater-control"
+INSTALL_DIR="/etc/asterisk/scripts"
 SCRIPT_FILE="$INSTALL_DIR/repeater-control.sh"
 SYMLINK="/usr/local/bin/repeater"
 REPO="https://raw.githubusercontent.com/N6LKA/asl3-repeater-control/main"
@@ -42,10 +42,8 @@ fi
 echo ""
 echo "--- Downloading files ---"
 
-# --- Create install directory with correct permissions ---
+# --- Ensure install directory exists ---
 mkdir -p "$INSTALL_DIR"
-chown root:asterisk "$INSTALL_DIR"
-chmod 775 "$INSTALL_DIR"
 
 # --- Download main script ---
 echo "Downloading repeater-control.sh..."
