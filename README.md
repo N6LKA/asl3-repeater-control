@@ -20,18 +20,19 @@ Announcements ("Repeater enabled." / "Repeater disabled.") are made via **text-t
 
 ## Installation
 
-Clone the repository and run the installer as root:
+Run this single command on your ASL3 server as root or with sudo:
 
 ```bash
-git clone https://github.com/N6LKA/asl3-repeater-control.git
-cd asl3-repeater-control
-sudo bash install.sh
+bash <(curl -fsSL https://raw.githubusercontent.com/N6LKA/asl3-repeater-control/main/install.sh)
 ```
 
 The installer:
-- Copies the script to `/etc/asterisk/scripts/asl3-repeater-control/`
+- Downloads `repeater-control.sh` directly from GitHub
+- Installs it to `/etc/asterisk/scripts/asl3-repeater-control/`
 - Sets ownership to `root:asterisk` so both root and the asterisk user can run it
 - Creates a symlink at `/usr/local/bin/repeater` so the command is available system-wide without specifying a path
+
+If a previous installation is detected, the installer will prompt before updating and create a backup automatically.
 
 ---
 
@@ -85,13 +86,13 @@ If no node number is provided and `NODE1` is not set, the first node found in `/
 
 ## Updating
 
-To update to the latest version:
+To update to the latest version, run the same install command:
 
 ```bash
-cd asl3-repeater-control
-git pull
-sudo bash install.sh
+bash <(curl -fsSL https://raw.githubusercontent.com/N6LKA/asl3-repeater-control/main/install.sh)
 ```
+
+The installer will detect the existing installation, prompt for confirmation, and create a backup before updating.
 
 ---
 
