@@ -18,21 +18,17 @@ Announcements ("Repeater enabled." / "Repeater disabled.") are made via **text-t
 
 ---
 
-## Installation
+## Installation & Updates
 
-Run this single command on your ASL3 server as root or with sudo:
+Run the following command as root or with sudo for both fresh installs and updates:
 
 ```bash
 bash <(curl -fsSL https://raw.githubusercontent.com/N6LKA/asl3-repeater-control/main/install.sh)
 ```
 
-The installer:
-- Downloads `repeater-control.sh` directly from GitHub
-- Installs it to `/etc/asterisk/scripts/asl3-repeater-control/`
-- Sets ownership to `root:asterisk` so both root and the asterisk user can run it
-- Creates a symlink at `/usr/local/bin/repeater` so the command is available system-wide without specifying a path
+**Fresh install:** Downloads `repeater-control.sh` directly from GitHub, installs it to `/etc/asterisk/scripts/asl3-repeater-control/`, sets ownership to `root:asterisk`, and creates a symlink at `/usr/local/bin/repeater` for system-wide access.
 
-If a previous installation is detected, the installer will prompt before updating and create a backup automatically.
+**Existing install detected:** The installer will prompt for confirmation, back up the existing script, and download the latest version.
 
 ---
 
@@ -84,18 +80,8 @@ If no node number is provided and `NODE1` is not set, the first node found in `/
 
 ---
 
-## Updating
-
-To update to the latest version, run the same install command:
-
-```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/N6LKA/asl3-repeater-control/main/install.sh)
-```
-
-The installer will detect the existing installation, prompt for confirmation, and create a backup before updating.
-
----
-
 ## License
 
-MIT License — see [LICENSE](LICENSE) for details.
+MIT License — Copyright 2026 Larry K. Aycock (N6LKA)
+
+See [LICENSE](LICENSE) for details.
