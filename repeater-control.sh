@@ -15,14 +15,21 @@ ASTERISK="/usr/sbin/asterisk"
 
 # --- Argument Parsing ---
 
-if [ -z "$1" ] || [ -z "$2" ]; then
+# Normalize to lowercase for case-insensitive matching
+cmd1="${1,,}"
+node="$2"
+
+if [ "$cmd1" != "enable" ] && [ "$cmd1" != "disable" ]; then
+    echo "Error: First argument must be 'enable' or 'disable'."
     echo "Usage: $(basename "$0") enable|disable <NodeNumber>"
     exit 1
 fi
 
-# Normalize to lowercase for case-insensitive matching
-cmd1="${1,,}"
-node="$2"
+if [ -z "$node" ]; then
+    echo "Error: Node number is required."
+    echo "Usage: $(basename "$0") enable|disable <NodeNumber>"
+    exit 1
+fi
 
 echo "Command: $cmd1"
 echo "Node:    $node"
