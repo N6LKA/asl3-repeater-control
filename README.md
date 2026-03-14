@@ -28,7 +28,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/N6LKA/asl3-repeater-control/
 
 **Fresh install:** Downloads `repeater-control.sh` directly from GitHub, installs it to `/etc/asterisk/scripts/`, sets ownership to `root:asterisk`, and creates a symlink at `/usr/local/bin/repeater` for system-wide access.
 
-**Existing install detected:** The installer will prompt for confirmation, back up the existing script, and download the latest version.
+**Existing install detected:** The installer will automatically back up the existing script and download the latest version.
 
 ---
 

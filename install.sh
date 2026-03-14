@@ -28,12 +28,7 @@ fi
 
 # --- Check for existing install ---
 if [[ -f "$SCRIPT_FILE" ]]; then
-    echo -e "${YELLOW}Existing installation detected.${NC}"
-    echo "The script will be updated to the latest version."
-    echo ""
-    read -rp "Continue with update? (y/n): " confirm
-    [[ "$confirm" != "y" && "$confirm" != "Y" ]] && echo "Aborted." && exit 0
-
+    echo -e "${YELLOW}Existing installation detected. Updating...${NC}"
     BACKUP="$SCRIPT_FILE.bak.$(date +%Y%m%d%H%M%S)"
     cp "$SCRIPT_FILE" "$BACKUP"
     echo "Backup created: $BACKUP"
