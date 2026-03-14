@@ -37,8 +37,8 @@ bash <(curl -fsSL https://raw.githubusercontent.com/N6LKA/asl3-repeater-control/
 Must be run as **root** or the **asterisk** user.
 
 ```bash
-repeater enable 501260
-repeater disable 501260
+repeater enable <NodeNumber>
+repeater disable <NodeNumber>
 ```
 
 ---
