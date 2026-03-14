@@ -37,25 +37,9 @@ bash <(curl -fsSL https://raw.githubusercontent.com/N6LKA/asl3-repeater-control/
 Must be run as **root** or the **asterisk** user.
 
 ```bash
-# Enable the repeater (auto-detects node from rpt.conf)
-repeater enable
-
-# Disable the repeater (auto-detects node from rpt.conf)
-repeater disable
-
-# Specify a node number explicitly
 repeater enable 501260
 repeater disable 501260
 ```
-
-You can also set the `NODE1` environment variable to define a default node:
-
-```bash
-export NODE1=501260
-repeater disable
-```
-
-If no node number is provided and `NODE1` is not set, the first node found in `/etc/asterisk/rpt.conf` is used automatically.
 
 ---
 

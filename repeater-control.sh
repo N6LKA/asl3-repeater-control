@@ -7,45 +7,25 @@
 #
 # Announcements are made via asl-tts (included with ASL3).
 #
-# Usage: repeater enable|disable [NodeNumber]
-#
-# If NodeNumber is omitted, NODE1 env variable is used, or the first node
-# found in rpt.conf is auto-detected.
+# Usage: repeater enable|disable <NodeNumber>
 #
 # Must be run as root or the asterisk user.
 
 ASTERISK="/usr/sbin/asterisk"
-RPT_CONF="/etc/asterisk/rpt.conf"
 
 # --- Argument Parsing ---
 
-if [ -z "$1" ]; then
-    echo "Error: Enable or Disable command required."
-    echo "Usage: $(basename "$0") enable|disable [NodeNumber]"
+if [ -z "$1" ] || [ -z "$2" ]; then
+    echo "Usage: $(basename "$0") enable|disable <NodeNumber>"
     exit 1
 fi
 
 # Normalize to lowercase for case-insensitive matching
 cmd1="${1,,}"
+node="$2"
+
 echo "Command: $cmd1"
-
-if [ -z "$2" ]; then
-    # Use NODE1 env variable or auto-detect from rpt.conf
-    if [ -n "$NODE1" ]; then
-        node="$NODE1"
-    else
-        node=$(grep -E '^\[[0-9]+\]' "$RPT_CONF" 2>/dev/null | head -1 | tr -d '[]')
-        if [ -z "$node" ]; then
-            echo "Error: Could not detect node number."
-            echo "Set the NODE1 environment variable or pass the node number as an argument."
-            exit 1
-        fi
-    fi
-else
-    node="$2"
-fi
-
-echo "Node: $node"
+echo "Node:    $node"
 
 # --- TTS Announcement ---
 
