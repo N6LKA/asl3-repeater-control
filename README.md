@@ -1,5 +1,10 @@
 # asl3-repeater-control
 
+![Release Version](https://img.shields.io/github/v/release/N6LKA/asl3-repeater-control?label=Version&color=f15d24)
+![Release Date](https://img.shields.io/github/release-date/N6LKA/asl3-repeater-control?label=Released&color=f15d24)
+![Hits](https://img.shields.io/endpoint?url=https%3A%2F%2Fhits.dwyl.com%2FN6LKA%2Fasl3-repeater-control.json&label=Hits&color=f15d24)
+![GitHub Repo Size](https://img.shields.io/github/repo-size/N6LKA/asl3-repeater-control?label=Size&color=f15d24)
+
 A bash script to enable or disable an [ASL3](https://allstarlink.org/) (AllStar Link 3) repeater node.
 
 **When disabled:** TX is shut down, all linked nodes are disconnected, linking is turned off, and telemetry is silenced. The node continues to receive signals and respond to DTMF commands.
