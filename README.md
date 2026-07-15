@@ -1,9 +1,9 @@
-# asl3-repeater-control
+# ASL3-Repeater-Control
 
-![Release Version](https://img.shields.io/github/v/release/N6LKA/asl3-repeater-control?label=Version&color=f15d24)
-![Release Date](https://img.shields.io/github/release-date/N6LKA/asl3-repeater-control?label=Released&color=f15d24)
-![Hits](https://img.shields.io/endpoint?url=https%3A%2F%2Fhits.dwyl.com%2FN6LKA%2Fasl3-repeater-control.json&label=Hits&color=f15d24)
-![GitHub Repo Size](https://img.shields.io/github/repo-size/N6LKA/asl3-repeater-control?label=Size&color=f15d24)
+![Release Version](https://img.shields.io/github/v/release/N6LKA/ASL3-Repeater-Control?label=Version&color=f15d24)
+![Release Date](https://img.shields.io/github/release-date/N6LKA/ASL3-Repeater-Control?label=Released&color=f15d24)
+![Hits](https://img.shields.io/endpoint?url=https%3A%2F%2Fhits.dwyl.com%2FN6LKA%2FASL3-Repeater-Control.json&label=Hits&color=f15d24)
+![GitHub Repo Size](https://img.shields.io/github/repo-size/N6LKA/ASL3-Repeater-Control?label=Size&color=f15d24)
 
 A bash script to enable or disable an [ASL3](https://allstarlink.org/) (AllStar Link 3) repeater node.
 
@@ -28,7 +28,7 @@ Announcements ("Repeater enabled." / "Repeater disabled.") are made via **text-t
 Run the following command as root or with sudo for both fresh installs and updates:
 
 ```bash
-bash <(curl -fsSL -H "Cache-Control: no-cache" https://raw.githubusercontent.com/N6LKA/asl3-repeater-control/main/install.sh)
+bash <(curl -fsSL -H "Cache-Control: no-cache" https://raw.githubusercontent.com/N6LKA/ASL3-Repeater-Control/main/install.sh)
 ```
 
 **Fresh install:** Downloads `repeater-control.sh` directly from GitHub, installs it to `/etc/asterisk/scripts/`, sets ownership to `root:asterisk`, and creates a symlink at `/usr/local/bin/repeater` for system-wide access.
